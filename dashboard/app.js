@@ -259,7 +259,7 @@
     var bar = el('div', { class: 'filters' });
     var qWrap = el('div', {});
     qWrap.appendChild(el('label', { text: 'Search' }));
-    var q = el('input', { type: 'search', placeholder: 'Search name, category, chain', value: state.q });
+    var q = el('input', { type: 'search', placeholder: 'Search name, category', value: state.q });
     q.addEventListener('input', function () { state.q = q.value; renderBoardOnly(); });
     qWrap.appendChild(q);
     bar.appendChild(qWrap);
