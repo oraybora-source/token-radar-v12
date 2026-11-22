@@ -267,7 +267,8 @@
       var w = el('div', {});
       w.appendChild(el('label', { text: label }));
       var s = el('select', {});
-      s.appendChild(el('option', { value: '', text: 'All ' + label.toLowerCase() + 's' }));
+      var plurals = { Category: 'All categories', Chain: 'All chains' };
+      s.appendChild(el('option', { value: '', text: plurals[label] || ('All ' + label.toLowerCase() + 's') }));
       options.forEach(function (o) { s.appendChild(el('option', { value: o, text: o })); });
       s.value = value;
       s.addEventListener('change', function () { onChange(s.value); renderBoardOnly(); });
